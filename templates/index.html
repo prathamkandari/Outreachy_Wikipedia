@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Application</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        .container {
+            background-color: rgb(146, 143, 141);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .page-logo {
+            display: flex;
+            align-items: center;
+            width: 30%;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .page-title {
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        .graph-container {
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="page-title">Data Visualization Application</h1>
+        <form id="dataForm" method="post">
+            <div class="form-row">
+                <div class="form-group col-md-6" style="text-align: left;">
+                    <label for="page_id">Page ID:</label>
+                    <input type="text" class="form-control" id="page_id" name="page_id">
+                </div>
+                <div class="form-group col-md-6" style="text-align: left;">
+                    <label for="feature">Select a Feature:</label>
+                    <select class="form-control" id="feature" name="feature">
+                        <option value="page_length">Page Length</option>
+                        <option value="num_refs">Number of References</option>
+                        <option value="num_wikilinks">Number of Wikilinks</option>
+                        <option value="num_categories">Number of Categories</option>
+                        <option value="num_media">Number of Media</option>
+                        <option value="num_headings">Number of Headings</option>
+                        <option value="pred_qual">Predicted Quality</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+
+        <!-- Display the generated graphs -->
+        <div class="graph-container">
+            <img src="../static/temp_plot_line.png">
+            <img src="../static/temp_plot_bar.png">
+            <!-- <img src="../static/temp_plot_heatmap.png" alt="Generated Graph"> -->
+            <img src="../static/temp_plot_pie.png">
+            <img src="../static/temp_plot_histogram.png">
+            <img src="../static/temp_plot_boxplot.png">
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (optional if you need JavaScript features) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
